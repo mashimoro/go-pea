@@ -1,0 +1,57 @@
+type Remark
+{
+    "Wbs": "string",
+    "PurchaseRequisitionId": "string",
+    "BidId": "string",
+    "CompanyName": "string",
+    "CompanyCode":   "string",
+    "PurchaseStatus": "string",
+    "Remark": "string",
+    "PurchaseOrderId": "string",
+}
+
+from 005 group by  wbs ,pr,po,companyCode  
+Table remark
+ 
+    "Wbs": "string",
+    "PurchaseRequisitionId": "string",
+    "PurchaseOrderId": "string",
+    "Remark": "string",
+
+    FE  : get:/purchasing-remark ,post:/purchasing-remark
+    be  : get:/purchasing-remark
+        data:[
+            {
+                "Wbs": "string",
+                "PurchaseRequisitionId": "string",
+                "BidId": "string",
+                "CompanyName": "string",
+                "PurchaseStatus": "string",
+                "Remark": "string",
+                "PurchaseOrderId": "string",
+            },
+            {
+                "Wbs": "string",
+                "PurchaseRequisitionId": "string",
+                "BidId": "string",
+                "CompanyName": "string",
+                "PurchaseStatus": "string",
+                "Remark": "string",
+                "PurchaseOrderId": "string",
+            }
+        ]
+        : post/remark 
+        [
+            {
+                "Wbs": "string",
+                "PurchaseRequisitionId": "string",
+                "PurchaseOrderId": "string",
+                "Remark": "string",
+            },
+            {
+                "Wbs": "string",
+                "PurchaseRequisitionId": "string",
+                "PurchaseOrderId": "string",
+                "Remark": "string",
+            }
+        ]
